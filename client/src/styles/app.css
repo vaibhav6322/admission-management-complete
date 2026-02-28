@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --bg-main: #f4f7fb;
+  --bg-accent: #e9efff;
+  --surface: #ffffff;
+  --surface-soft: #f8faff;
+  --text-main: #10223b;
+  --text-muted: #51607a;
+  --primary: #0d6efd;
+  --border: #dce5f2;
+  --shadow: 0 12px 28px rgba(12, 34, 66, 0.08);
+  --radius: 14px;
+  --sidebar-width: 240px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 8% 12%, var(--bg-accent), transparent 40%),
+    radial-gradient(circle at 88% 20%, #eaf6ff, transparent 34%),
+    var(--bg-main);
+}
+
+.app-shell,
+.role-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-drawer .MuiDrawer-paper {
+  width: var(--sidebar-width);
+  border-right: 1px solid var(--border);
+  background: linear-gradient(180deg, #fdfefe 0%, #f5f9ff 100%);
+  padding-top: 8px;
+}
+
+.sidebar-list {
+  width: 100%;
+  padding: 8px;
+}
+
+.sidebar-list .MuiListItemButton-root {
+  border-radius: 10px;
+  margin-bottom: 6px;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.sidebar-list .MuiListItemButton-root:hover {
+  background: #e8f1ff;
+}
+
+.app-content {
+  width: 100%;
+  margin-left: var(--sidebar-width);
+  padding: 28px;
+}
+
+.MuiPaper-root:not(.MuiDrawer-paper) {
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.MuiCard-root {
+  border-radius: 12px !important;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 24px rgba(18, 42, 77, 0.08);
+}
+
+.MuiTable-root {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.MuiTableCell-head {
+  background: var(--surface-soft);
+  color: var(--text-main);
+  font-weight: 700 !important;
+}
+
+.MuiTypography-h4,
+.MuiTypography-h5,
+.MuiTypography-h6,
+h2 {
+  color: var(--text-main);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  margin-top: 0;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root {
+  border-radius: 10px;
+  background: #fff;
+}
+
+.MuiButton-contained {
+  background: linear-gradient(135deg, #0d6efd 0%, #2481ff 100%) !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  box-shadow: 0 8px 18px rgba(13, 110, 253, 0.25) !important;
+}
+
+.MuiButton-contained:hover {
+  filter: brightness(0.96);
+}
+
+@media (max-width: 900px) {
+  :root {
+    --sidebar-width: 200px;
+  }
+
+  .app-content {
+    padding: 16px;
+  }
+
+  .MuiGrid-item {
+    max-width: 100% !important;
+    flex-basis: 100% !important;
+  }
+}
